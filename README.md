@@ -106,3 +106,19 @@ This entity stores data for details of all payment transactions on each bookings
 
     **Relationships:**
     - *One payment* belongs to *one booking*.
+
+## Feature Breakdown
+1. **API Documentation**:
+The *API documentation* provides a clear and interactive reference for developers to understand and test the platform’s endpoints. The backend APIs would be documented using the OpenAPI standard to ensure clarity and ease of integration. It also includes the provision of a comprehensive RESTful API documentation on how to handle CRUD operations on user and property data.
+2. **User Authentication**:
+This feature handles secure registration, login, and session management for users (both guests and hosts). It ensures only authorized users can access or modify their data using methods like JWT tokens or OAuth, contributing to overall platform security.
+3. **Property Management**:
+Property management allows hosts to create, update, and delete property listings. It provides the foundation of the platform’s content, enabling guest-users to browse and book the properties and vendors to add properties.
+4. **Booking System**:
+The *booking system* manages property availability, reservations, and check-in/check-out dates (bookings). It prevents double bookings and ensures accurate price calculations.
+5. **Payment Processing**:
+*Payment processing* securely handles payment transactions between guests and vendors. It ensures reliability, encryption, and accurate tracking of completed and pending payments within the system.
+6. **Review System**:
+The *review system* enables guest users to rate and leave feedback reviews on the properties. It also provides hosts with credibility and a reputation metric that fosters trust across the platform.
+7. **Database Optimizations**:
+*Database optimizations* involve indexing, query tuning, and caching frequently accessed data to enhance performance. This ensures faster data retrieval, better scalability, and smooth handling of large volumes of bookings and user data in order to reduce database load and improve performance.
