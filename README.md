@@ -37,3 +37,72 @@ This project enables learners to understand complex architectures, workflows, an
 - **Redis**: Used for caching and session management.
 - **Docker**: Containerization tool to ensure consistent development and deployment environments.
 - **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
+
+## Database Design
+Key entities of the database are: Users, Properties, Bookings, Reviews, and Payments.
+- **Users**:
+This entity stores data for all the users including the vendors and guests. 
+    
+    **Some important fields includes:**
+    1. *user_id* - A unique identifier for each user entry. 
+    2. *fullname* - The fullname of the user.
+    3. *email* - The email address of the user.
+    4. *is_vendor* - A boolean value that checks if the user is a vendor(landlord) or guest.
+    5. *password_hash* - For security reasons, an encrypted version of the user password.
+
+    **Relationships:**
+    - *One user* can host *many properties*.
+    - *One user* can make *many bookings*.
+    - *One user* can leave *many reviews*.
+- **Properties**:
+This entity represents a listed property by a vendor-user.
+    
+    **Some important fields includes:**
+    1. *property_id* - A unique identifier for each property entry. 
+    2. *vendor_id* - A foreign key associated with the corresponding user_id of the vendor.
+    3. *title* - Name/description of the listed property.
+    4. *daily_price* - Amount to rent the property.
+    5. *is_available* - A boolean to check if the property is available for rent.
+
+    **Relationships:**
+    - *One property* can have *many reviews*.
+    - *One property* can have *many bookings*.
+- **Bookings**:
+This entity represents a booking made by a guest user.
+    
+    **Some important fields includes:**
+    1. *booking_id* - A unique identifier for each booking. 
+    2. *guest_id* - A foreign key associated with the corresponding user_id of the guest.
+    3. *property_id* - A foreign key associated with the corresponding property_id of the property being booked.
+    4. *status* - A value for the status of the booking e.g. confirmed, pending.
+    5. *guests* - Number of guests allowed.
+
+    **Relationships:**
+    - *One booking* can have *one payment*.
+    - *One property* can have *many bookings*.
+    - *One user*(guest) can make *many bookings*.
+- **Reviews**:
+This entity stores data for all reviews left on the properties.
+    
+    **Some important fields includes:**
+    1. *review_id* - A unique identifier for each review. 
+    2. *property_id* - A foreign key associated with the corresponding property_id of the property being reviewed.
+    3. *guest_id* - A foreign key associated with the corresponding user_id of the reviewer.
+    4. *rating* - Review rating of the property e.g. 1-5 stars
+    5. *comment* - Review comment. 
+
+    **Relationships:**
+    - *One property* can have *many listings*.
+    - *One user* can leave *many reviews*.
+- **Payments**: 
+This entity stores data for details of all payment transactions on each bookings. 
+    
+    **Some important fields includes:**
+    1. *payment_id* - A unique identifier for each payment transaction. 
+    2. *booking_id* - A foreign key associated with the corresponding booking id of the booking being paid for.
+    3. *amount* - Amount paid.
+    4. *status* - Payment status e.g. pending, successful, failed.
+    5. *transaction_date* - Payment date. 
+
+    **Relationships:**
+    - *One payment* belongs to *one booking*.
