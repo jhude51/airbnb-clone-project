@@ -23,7 +23,7 @@ This project enables learners to understand complex architectures, workflows, an
 - **CI/CD Pipelines**: Automated pipelines for testing and deploying code changes.
 
 ## Team Roles
-**Backend Developer**: Responsible for implementing the core of the app including its algorithm and *business logic*. The backend developer is also devise the app architecture and  *database schemas* as well as the necessary integrations such as *API endpoints*. 
-**Database Administrator**: Responsible for managing the relational *database design* as well as *indexing*, and db *optimizations*.
-**DevOps Engineer**: Responsible for the faster deployment using *continuous integration and continuous delivery (CI/CD) Pipelines* as well as *monitoring*, and *scaling* of the backend services. 
-**QA Engineer**: Responsible for ensuring the backend functionalities are thoroughly tested and meet quality standards as well as meeting both functional and non-functional requirements.
+1. **Backend Developer**: Responsible for implementing the core of the app including its algorithm and *business logic*. The backend developer is also devise the app architecture and  *database schemas* as well as the necessary integrations such as *API endpoints*. 
+2. **Database Administrator**: Responsible for managing the relational *database design* as well as *indexing*, and db *optimizations*.
+3. **DevOps Engineer**: Responsible for the faster deployment using *continuous integration and continuous delivery (CI/CD) Pipelines* as well as *monitoring*, and *scaling* of the backend services. 
+4. **QA Engineer**: Responsible for ensuring the backend functionalities are thoroughly tested and meet quality standards as well as meeting both functional and non-functional requirements.
