@@ -153,7 +153,7 @@ The application’s environment would be secured to prevent server-level threats
 6. **CORS (Cross-Origin Resource Sharing) Configuration**:
 CORS will be configured to restrict which domains can access the API. This prevents unauthorized frontend applications or malicious sites from interacting with the backend directly.
 ### Why Security is Essential
-Security is a fundamental aspect of the Airbnb-Clone-Project, ensuring that users' trust, data integrity, and platform reliability are maintained at all times. 
+Security is a fundamental aspect of the *Airbnb-Clone-Project*, ensuring that users' trust, data integrity, and platform reliability are maintained at all times. 
 
 Each layer of the system i.e. from user authentication to payment processing, requires strong safeguards to protect sensitive information and prevent malicious activity. The following outlines why security is crucial across key areas of the platform:
 1. **Protecting User Data**
@@ -183,3 +183,36 @@ A secure platform fosters user confidence and brand credibility. Ensuring end-to
 7. **Ensuring Compliance and Legal Protection**
 
 Implementing strong security controls ensures the platform meets compliance standards for data privacy and payment processing (e.g., GDPR, PCI-DSS).
+
+## CI/CD Pipeline
+**CI/CD (Continuous Integration and Continuous Deployment) pipelines** are automated workflows that streamline the process of building, testing, and deploying code changes. Breaking them down:
+
+- **Continuous Integration (CI)**: CI pipelines automatically runs tests and merges code whenever developers push updates to the repository, ensuring that new features don’t break existing functionality. 
+
+- **Continuous Deployment (CD)**: CD pipelines then automates the release of these verified changes to production or staging environments, reducing manual effort and deployment errors.
+
+In the *Airbnb-Clone-Project*, CI/CD pipelines ensures faster development cycles, consistent code quality, and quicker delivery of new features or bug fixes. It also enhances collaboration by allowing multiple developers to work simultaneously with confidence in the system’s stability.
+
+### Example of CI/CD Tools:
+
+- **GitHub Actions:** It automates building, testing, and deployment directly from the project’s GitHub repository.
+
+- **Jenkins**: An open-source automation servers that provide customizable pipelines (has a vast library of plugins) for complex workflows.
+
+- **GitLab CI/CD**:  It is fully integrated into GitLab repositories with advanced pipeline visualization.
+
+- **AWS CodePipeline**: AWS-native automation tool for continuous delivery to EC2, ECS, or Lambda.
+
+- **Azure DevOps Pipelines**: Microsoft’s robust CI/CD platform supporting cloud and on-prem deployments.
+
+- **CircleCI**: A cloud-based CI/CD tool known for its speed and ease of integration with GitHub/Bitbucket.
+
+### Other tools that can be integrated to a CI/CD pipeline includes:
+
+- **Docker:** Containerizes the application to ensure consistency across development, testing, and production environments.
+
+- **SonarQube**: Analyzes code quality, security vulnerabilities, and maintainability.
+
+- **Snyk / Dependabot**: Monitors dependencies for known vulnerabilities.
+
+- **Terraform**: An Infrastructure as Code (IaC) tool that can manage cloud resources (AWS, Azure, GCP) through declarative configuration files.
