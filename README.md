@@ -122,3 +122,64 @@ The *booking system* manages property availability, reservations, and check-in/c
 The *review system* enables guest users to rate and leave feedback reviews on the properties. It also provides hosts with credibility and a reputation metric that fosters trust across the platform.
 7. **Database Optimizations**:
 *Database optimizations* involve indexing, query tuning, and caching frequently accessed data to enhance performance. This ensures faster data retrieval, better scalability, and smooth handling of large volumes of bookings and user data in order to reduce database load and improve performance.
+
+## API Security
+### Key Security Measures
+1. **Authentication**:
+Secure authentication ensures that only verified users can access the platform.
+    - Implementation of *JWT (JSON Web Tokens)* or *OAuth 2.0* for stateless login sessions.
+    - Storing passwords using *hashing* before saving to the database.
+    - Enabling *multi-factor authentication (MFA)* for added protection of host and admin accounts.
+2. **Authorization**:
+Authorization controls what each user can do based on their role (e.g., guest, vendor, admin).
+    - Using *role-based access control (RBAC)* to restrict certain actions (e.g., only vendors can create listings).
+    - Validating user ownership of resources (e.g., a user can only edit their own booking or property).
+    - Securing the API endpoints using middleware that checks permissions before performing sensitive operations.
+3. **Rate Limiting**:
+Rate limiting prevents abuse such as brute-force login attempts or denial-of-service (DoS) attacks.
+    - Implementation of an IP-based rate limiting using tools like an API gateway.
+    - Setting *request thresholds per minute/hour* to protect public APIs.
+    - Combined with account lockout mechanisms after repeated failed login attempts.
+4. **Input Validation & Sanitization**:
+To prevent injection and scripting attacks, all user inputs would be validated and sanitized.
+    - Validation of request payloads using libraries like *Joi* or *Yup*.
+    - Sanitizing inputs to protect against *SQL injection, XSS, and CSRF attacks*.
+    - Using *parameterized queries* or *ORM methods* to safely interact with the database.
+5. **Secure Deployment Practices**:
+The application’s environment would be secured to prevent server-level threats.
+    - Storing secrets (API keys, DB credentials) in environment variables or a secret manager.
+    - Regularly updating dependencies to fix known vulnerabilities.
+    - Using container security and firewall rules to isolate and protect the backend services.
+6. **CORS (Cross-Origin Resource Sharing) Configuration**:
+CORS will be configured to restrict which domains can access the API. This prevents unauthorized frontend applications or malicious sites from interacting with the backend directly.
+### Why Security is Essential
+Security is a fundamental aspect of the Airbnb-Clone-Project, ensuring that users' trust, data integrity, and platform reliability are maintained at all times. 
+
+Each layer of the system i.e. from user authentication to payment processing, requires strong safeguards to protect sensitive information and prevent malicious activity. The following outlines why security is crucial across key areas of the platform:
+1. **Protecting User Data**
+
+User information such as emails, passwords, and contact details must remain confidential to prevent identity theft and unauthorized access. Implementing encryption, hashing, and secure communication protocols ensures user data remains private and compliant with global data protection regulations (GDPR).
+
+2. **Securing Payments**
+
+Financial transactions between guests and hosts require high-level protection to prevent fraud and data exposure. Using secure payment gateways, tokenization, and end-to-end encryption ensures the safety and reliability of all monetary exchanges on the platform.
+
+3. **Safeguarding Authentication & Authorization**
+
+Robust authentication and authorization mechanisms are essential to control user access. By implementing features like *role-based access control (RBAC)* and *secure login sessions*, the system ensures only legitimate users can perform actions based on their privileges, preventing unauthorized system manipulation.
+
+4. **Protecting Property and Booking Data**
+
+Property listings, booking information, and reviews form the core of the platform’s operations. Security measures here prevent data tampering, false reservations, and unauthorized edits that could disrupt trust and operational integrity.
+
+5. **Maintaining API and System Integrity**
+
+APIs serve as the communication bridge between the frontend and backend. Securing them through *rate limiting*, *input validation*, and *authentication* helps prevent abuse, data leaks, and *denial-of-service (DoS)* attacks, maintaining system stability and performance.
+
+6. **Preserving Platform Reputation and Trust**
+
+A secure platform fosters user confidence and brand credibility. Ensuring end-to-end protection from registration to payment helps the system maintain a positive reputation, attract new users, and encourage repeat engagement.
+
+7. **Ensuring Compliance and Legal Protection**
+
+Implementing strong security controls ensures the platform meets compliance standards for data privacy and payment processing (e.g., GDPR, PCI-DSS).
